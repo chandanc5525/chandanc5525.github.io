@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chandan Chaudhari | Data & AI Strategy Consultant | Business Transformation Mentor | L&D Professional</title>
+    <title>Chandan Chaudhari | Data Science & AI Mentor | L&D Leader | CAE Consultant</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,14 +15,14 @@
             --primary-dark: #0052d4;
             --secondary: #6c5ce7;
             --accent: #00d2d3;
+            --ai-blue: #3b82f6;
+            --data-green: #10b981;
+            --cae-purple: #8b5cf6;
             --dark: #0f172a;
             --dark-light: #1e293b;
             --light: #f8fafc;
             --gray: #64748b;
             --light-gray: #e2e8f0;
-            --success: #10b981;
-            --warning: #f59e0b;
-            --danger: #ef4444;
             
             --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             --shadow-dark: 0 20px 40px rgba(0, 0, 0, 0.15);
@@ -267,14 +267,14 @@
             display: block;
         }
 
-        .hero-text .role-tags {
+        .hero-text .expertise-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 15px;
             margin-bottom: 30px;
         }
 
-        .role-tag {
+        .expertise-tag {
             background: var(--light);
             border: 2px solid var(--light-gray);
             padding: 8px 20px;
@@ -286,8 +286,19 @@
             gap: 8px;
         }
 
-        .role-tag i {
-            color: var(--primary);
+        .expertise-tag.ai {
+            border-color: rgba(59, 130, 246, 0.3);
+            color: var(--ai-blue);
+        }
+
+        .expertise-tag.data {
+            border-color: rgba(16, 185, 129, 0.3);
+            color: var(--data-green);
+        }
+
+        .expertise-tag.cae {
+            border-color: rgba(139, 92, 246, 0.3);
+            color: var(--cae-purple);
         }
 
         .hero-text p {
@@ -357,198 +368,131 @@
             opacity: 0.9;
         }
 
-        /* About Section */
-        .about {
+        /* Core Expertise Section */
+        .expertise {
+            background: linear-gradient(135deg, rgba(0, 102, 255, 0.02) 0%, rgba(108, 92, 231, 0.02) 100%);
+        }
+
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .expertise-card {
+            background: var(--light);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-top: 4px solid transparent;
+        }
+
+        .expertise-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-dark);
+        }
+
+        .expertise-card.ai {
+            border-top-color: var(--ai-blue);
+        }
+
+        .expertise-card.ld {
+            border-top-color: var(--data-green);
+        }
+
+        .expertise-card.cae {
+            border-top-color: var(--cae-purple);
+        }
+
+        .expertise-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+        }
+
+        .expertise-icon.ai {
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--ai-blue);
+        }
+
+        .expertise-icon.ld {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--data-green);
+        }
+
+        .expertise-icon.cae {
+            background: rgba(139, 92, 246, 0.1);
+            color: var(--cae-purple);
+        }
+
+        /* Value Proposition */
+        .value-proposition {
             background-color: var(--light);
         }
 
-        .about-content {
+        .value-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 60px;
             align-items: start;
         }
 
-        .about-text .section-header {
-            text-align: left;
-        }
-
-        .about-text .section-header h2::after {
-            left: 0;
-            transform: none;
-        }
-
-        .highlight-box {
+        .value-box {
             background: linear-gradient(135deg, rgba(0, 102, 255, 0.1), rgba(108, 92, 231, 0.1));
-            padding: 30px;
+            padding: 40px;
             border-radius: var(--border-radius);
             margin: 30px 0;
             border-left: 4px solid var(--primary);
         }
 
-        .highlight-box h3 {
-            margin-bottom: 15px;
+        .value-box h3 {
+            margin-bottom: 20px;
             color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
 
-        .about-features {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
+        .value-points {
             margin-top: 30px;
         }
 
-        .feature-item {
+        .value-point {
             display: flex;
             align-items: flex-start;
             gap: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         }
 
-        .feature-icon {
-            width: 50px;
-            height: 50px;
+        .value-point:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .value-icon {
+            width: 40px;
+            height: 40px;
             background: rgba(0, 102, 255, 0.1);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
-        }
-
-        .feature-icon i {
             color: var(--primary);
-            font-size: 1.2rem;
-        }
-
-        .feature-text h4 {
-            font-size: 1.2rem;
-            margin-bottom: 5px;
-        }
-
-        /* Services Section */
-        .services {
-            background: linear-gradient(135deg, rgba(0, 102, 255, 0.02) 0%, rgba(108, 92, 231, 0.02) 100%);
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .service-card {
-            background: var(--light);
-            border-radius: var(--border-radius);
-            padding: 40px 30px;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            border-top: 4px solid transparent;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-dark);
-            border-top-color: var(--primary);
-        }
-
-        .service-icon {
-            width: 70px;
-            height: 70px;
-            background: rgba(0, 102, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 25px;
-        }
-
-        .service-icon i {
-            font-size: 1.8rem;
-            color: var(--primary);
-        }
-
-        .service-card h3 {
-            margin-bottom: 15px;
-        }
-
-        /* Tech Stack Section */
-        .tech-stack {
-            background: linear-gradient(135deg, rgba(0, 102, 255, 0.02) 0%, rgba(108, 92, 231, 0.02) 100%);
-        }
-
-        .tech-categories {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-        }
-
-        .tech-category {
-            background: var(--light);
-            border-radius: var(--border-radius);
-            padding: 30px;
-            box-shadow: var(--shadow);
-            border: 1px solid var(--light-gray);
-        }
-
-        .tech-category h3 {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 25px;
-            color: var(--dark);
-            padding-bottom: 15px;
-            border-bottom: 2px solid var(--light-gray);
-        }
-
-        .tech-category h3 i {
-            color: var(--primary);
-        }
-
-        .tech-items {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        .tech-item {
-            background: rgba(0, 102, 255, 0.08);
-            border: 1px solid rgba(0, 102, 255, 0.15);
-            border-radius: 6px;
-            padding: 10px 18px;
-            font-family: 'Source Code Pro', monospace;
-            font-size: 0.85rem;
-            font-weight: 500;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--dark);
-        }
-
-        .tech-item:hover {
-            background: rgba(0, 102, 255, 0.15);
-            border-color: var(--primary);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 102, 255, 0.1);
-        }
-
-        .tech-item i {
-            color: var(--primary);
-            font-size: 0.9rem;
-        }
-
-        .tech-description {
-            font-size: 0.9rem;
-            color: var(--gray);
-            margin-top: 10px;
-            font-style: italic;
-            padding-left: 5px;
-            border-left: 3px solid var(--light-gray);
         }
 
         /* Contact Section */
         .contact {
-            background-color: var(--light);
+            background: linear-gradient(135deg, rgba(0, 102, 255, 0.02) 0%, rgba(108, 92, 231, 0.02) 100%);
         }
 
         .contact-content {
@@ -739,7 +683,7 @@
             }
             
             .hero-content,
-            .about-content {
+            .value-content {
                 grid-template-columns: 1fr;
                 gap: 50px;
             }
@@ -752,7 +696,7 @@
                 justify-content: center;
             }
             
-            .role-tags {
+            .expertise-tags {
                 justify-content: center;
             }
             
@@ -808,7 +752,7 @@
                 width: 100%;
             }
             
-            .about-features {
+            .expertise-grid {
                 grid-template-columns: 1fr;
             }
             
@@ -850,10 +794,6 @@
                 height: 250px;
             }
             
-            .tech-category {
-                padding: 20px;
-            }
-            
             .contact-form {
                 padding: 25px;
             }
@@ -876,9 +816,8 @@
                 
                 <ul class="nav-links" id="navLinks">
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#tech">Tech Stack</a></li>
+                    <li><a href="#expertise">Expertise</a></li>
+                    <li><a href="#value">Value Proposition</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -890,29 +829,29 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <span class="title-tag">Strategic Data & AI Leader</span>
+                    <span class="title-tag">Data Science & AI Mentor | L&D Leader</span>
                     <h1>Chandan Chaudhari</h1>
                     
                     <div class="subtitle">
-                        Data & AI Strategy Consultant | Business Transformation Mentor | L&D Professional
+                        Driving Digital Transformation Through AI Education & Engineering Innovation
                     </div>
                     
-                    <div class="role-tags">
-                        <span class="role-tag"><i class="fas fa-chess-king"></i> Strategy Consultant</span>
-                        <span class="role-tag"><i class="fas fa-sync-alt"></i> Transformation Mentor</span>
-                        <span class="role-tag"><i class="fas fa-graduation-cap"></i> L&D Professional</span>
+                    <div class="expertise-tags">
+                        <span class="expertise-tag ai"><i class="fas fa-robot"></i> Data Science & AI Mentor</span>
+                        <span class="expertise-tag data"><i class="fas fa-graduation-cap"></i> L&D Strategy Leader</span>
+                        <span class="expertise-tag cae"><i class="fas fa-cube"></i> CAE Consultant</span>
                     </div>
                     
-                    <p>13-year proven track record of designing and executing enterprise-wide digital initiatives that translate complex business needs into scalable Data and AI strategies, resulting in enhanced operational efficiency, revenue growth, and market leadership.</p>
+                    <p>13+ years shaping technical talent and implementing AI solutions that bridge engineering principles with digital transformation. Specializing in upskilling teams, building data-driven cultures, and creating practical learning pathways for enterprise AI adoption.</p>
                     
                     <div class="hero-btns">
                         <a href="#contact" class="btn">
                             <i class="fas fa-paper-plane"></i>
-                            Get In Touch
+                            Connect for Mentorship
                         </a>
                         <a href="https://github.com/chandanc5525" target="_blank" class="btn btn-outline">
                             <i class="fab fa-github"></i>
-                            View GitHub
+                            View GitHub Projects
                         </a>
                     </div>
                 </div>
@@ -920,15 +859,15 @@
                 <div class="hero-image">
                     <div class="profile-img-container">
                         <div class="profile-img">
-                            <!-- Your GitHub Profile Photo -->
-                            <img src="https://avatars.githubusercontent.com/u/chandanc5525" 
-                                 alt="Chandan Chaudhari - Data & AI Strategy Consultant"
-                                 onerror="this.onerror=null; this.src='https://avatars.githubusercontent.com/chandanc5525'">
+                            <!-- Fixed GitHub Photo URL -->
+                            <img src="https://avatars.githubusercontent.com/chandanc5525" 
+                                 alt="Chandan Chaudhari - Data Science & AI Mentor"
+                                 onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80'">
                         </div>
                         
                         <div class="experience-badge">
                             <div class="exp-number">13+</div>
-                            <div class="exp-text">Years of Experience</div>
+                            <div class="exp-text">Years Mentoring</div>
                         </div>
                     </div>
                 </div>
@@ -936,169 +875,125 @@
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <div class="section-header">
-                        <h2>About Me</h2>
-                        <p>Strategic Data & AI Leader and Business Transformation Mentor with 13+ years of experience</p>
-                    </div>
-                    
-                    <p>I specialize in translating complex business needs into scalable Data and AI strategies. A cornerstone of my approach is building high-performing teams through bespoke L&D programs that ensure strategic alignment and long-term capability building.</p>
-                    
-                    <div class="highlight-box">
-                        <h3><i class="fas fa-bullseye"></i> Unique Value Proposition</h3>
-                        <p>Translating deep mechanical engineering first principles into sophisticated digital strategies that transform operations and create competitive advantage.</p>
-                    </div>
-                    
-                    <div class="about-features">
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-chart-line"></i>
-                            </div>
-                            <div class="feature-text">
-                                <h4>Revenue Growth</h4>
-                                <p>Driving measurable business outcomes through strategic AI implementation</p>
-                            </div>
-                        </div>
-                        
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-users"></i>
-                            </div>
-                            <div class="feature-text">
-                                <h4>Team Building</h4>
-                                <p>Building high-performing teams through targeted L&D and capability building</p>
-                            </div>
-                        </div>
-                        
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-cogs"></i>
-                            </div>
-                            <div class="feature-text">
-                                <h4>Operational Efficiency</h4>
-                                <p>Enhancing processes through digital transformation and automation</p>
-                            </div>
-                        </div>
-                        
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-lightbulb"></i>
-                            </div>
-                            <div class="feature-text">
-                                <h4>Innovation</h4>
-                                <p>Creating competitive advantage through sophisticated digital strategies</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Data Analytics Dashboard">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="services" id="services">
+    <!-- Core Expertise Section -->
+    <section class="expertise" id="expertise">
         <div class="container">
             <div class="section-header">
-                <h2>My Services</h2>
-                <p>Comprehensive consulting and mentoring services to transform your organization through Data and AI</p>
+                <h2>Core Expertise</h2>
+                <p>Integrating technical depth with pedagogical excellence across three specialized domains</p>
             </div>
             
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-chess-king"></i>
+            <div class="expertise-grid">
+                <div class="expertise-card ai">
+                    <div class="expertise-icon ai">
+                        <i class="fas fa-robot"></i>
                     </div>
-                    <h3>Data & AI Strategy</h3>
-                    <p>End-to-end AI solution lifecycle management, from strategic conception to scalable deployment and CI/CD automation. Building intelligent systems that drive measurable business outcomes.</p>
+                    <h3>Data Science & AI Mentorship</h3>
+                    <p>Guiding technical teams through practical AI implementation, from model development to deployment. Expert in translating complex ML concepts into actionable strategies for business applications.</p>
+                    <ul style="margin-top: 20px; padding-left: 20px;">
+                        <li style="margin-bottom: 10px; color: var(--gray);">• Hands-on ML/DS training & workshops</li>
+                        <li style="margin-bottom: 10px; color: var(--gray);">• AI solution architecture guidance</li>
+                        <li style="color: var(--gray);">• MLOps & deployment best practices</li>
+                    </ul>
                 </div>
                 
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-sync-alt"></i>
-                    </div>
-                    <h3>Business Transformation</h3>
-                    <p>Driving enterprise-wide digital initiatives that enhance operational efficiency, revenue growth, and market leadership. Expert in mentoring cross-functional leaders.</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
+                <div class="expertise-card ld">
+                    <div class="expertise-icon ld">
                         <i class="fas fa-graduation-cap"></i>
                     </div>
-                    <h3>Organizational Upskilling</h3>
-                    <p>Building high-performing teams through bespoke L&D programs. Architecting comprehensive technical training curricula and upskilling programs for data science and engineering.</p>
+                    <h3>Learning & Development Leadership</h3>
+                    <p>Architecting comprehensive upskilling programs that build data literacy and AI capability across organizations. Creating learning pathways that drive adoption and maximize ROI on tech investments.</p>
+                    <ul style="margin-top: 20px; padding-left: 20px;">
+                        <li style="margin-bottom: 10px; color: var(--gray);">• Technical curriculum development</li>
+                        <li style="margin-bottom: 10px; color: var(--gray);">• LMS strategy & implementation</li>
+                        <li style="color: var(--gray);">• Data literacy programs</li>
+                    </ul>
+                </div>
+                
+                <div class="expertise-card cae">
+                    <div class="expertise-icon cae">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <h3>CAE & Engineering Consulting</h3>
+                    <p>Bridging mechanical engineering principles with modern digital tools. Specializing in simulation-driven design, computational methods, and engineering software implementation.</p>
+                    <ul style="margin-top: 20px; padding-left: 20px;">
+                        <li style="margin-bottom: 10px; color: var(--gray);">• Simulation & analysis guidance</li>
+                        <li style="margin-bottom: 10px; color: var(--gray);">• Engineering software training</li>
+                        <li style="color: var(--gray);">• Digital twin implementation</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Tech Stack Section -->
-    <section class="tech-stack" id="tech">
+    <!-- Value Proposition Section -->
+    <section class="value-proposition" id="value">
         <div class="container">
             <div class="section-header">
-                <h2>Technical Architecture & Stack</h2>
-                <p>Comprehensive expertise across modern data, AI, and engineering ecosystems</p>
+                <h2>Professional Value Proposition</h2>
+                <p>Bridging technical expertise with educational excellence to drive measurable transformation</p>
             </div>
             
-            <div class="tech-categories">
-                <div class="tech-category">
-                    <h3><i class="fas fa-robot"></i> AI & Machine Learning</h3>
-                    <div class="tech-items">
-                        <div class="tech-item"><i class="fab fa-python"></i> Python</div>
-                        <div class="tech-item"><i class="fas fa-chart-line"></i> R</div>
-                        <div class="tech-item"><i class="fas fa-brain"></i> TensorFlow</div>
-                        <div class="tech-item"><i class="fas fa-fire"></i> PyTorch</div>
-                        <div class="tech-item"><i class="fas fa-cogs"></i> Scikit-Learn</div>
-                        <div class="tech-item"><i class="fas fa-eye"></i> OpenCV</div>
-                        <div class="tech-item"><i class="fas fa-calculator"></i> MATLAB</div>
+            <div class="value-content">
+                <div>
+                    <div class="value-box">
+                        <h3><i class="fas fa-bullseye"></i> Strategic Differentiation</h3>
+                        <p>Unique ability to translate deep technical knowledge into effective learning experiences and practical implementation strategies. I don't just teach theory—I show how to apply AI and data science principles to solve real engineering and business challenges.</p>
+                        
+                        <div class="value-points">
+                            <div class="value-point">
+                                <div class="value-icon">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <div>
+                                    <h4 style="margin-bottom: 5px;">Practical Skill Development</h4>
+                                    <p style="font-size: 1rem;">Focus on hands-on, project-based learning that builds immediately applicable skills</p>
+                                </div>
+                            </div>
+                            
+                            <div class="value-point">
+                                <div class="value-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div>
+                                    <h4 style="margin-bottom: 5px;">Team Capability Building</h4>
+                                    <p style="font-size: 1rem;">Creating sustainable learning ecosystems that grow with your organization's needs</p>
+                                </div>
+                            </div>
+                            
+                            <div class="value-point">
+                                <div class="value-icon">
+                                    <i class="fas fa-cogs"></i>
+                                </div>
+                                <div>
+                                    <h4 style="margin-bottom: 5px;">Technical Mentorship</h4>
+                                    <p style="font-size: 1rem;">Guiding teams through complex implementations with practical, experience-based advice</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="tech-description">End-to-end ML pipeline development, model training, and deployment</div>
                 </div>
                 
-                <div class="tech-category">
-                    <h3><i class="fas fa-cloud"></i> Cloud & Data Platforms</h3>
-                    <div class="tech-items">
-                        <div class="tech-item"><i class="fas fa-snowflake"></i> Snowflake</div>
-                        <div class="tech-item"><i class="fas fa-database"></i> Databricks</div>
-                        <div class="tech-item"><i class="fas fa-bolt"></i> Apache Spark</div>
-                        <div class="tech-item"><i class="fas fa-ethernet"></i> ETL Pipelines</div>
-                        <div class="tech-item"><i class="fab fa-aws"></i> AWS</div>
-                        <div class="tech-item"><i class="fas fa-cloud"></i> Azure</div>
+                <div>
+                    <h3>Impact & Outcomes</h3>
+                    <p>My approach delivers measurable results through a combination of technical guidance and structured learning:</p>
+                    
+                    <div style="margin-top: 30px;">
+                        <div style="background: rgba(59, 130, 246, 0.05); padding: 25px; border-radius: var(--border-radius); margin-bottom: 20px; border-left: 4px solid var(--ai-blue);">
+                            <h4 style="color: var(--ai-blue); margin-bottom: 10px;"><i class="fas fa-robot"></i> Faster AI Adoption</h4>
+                            <p>Reduced time-to-competency for teams implementing AI solutions by 40% through targeted mentorship</p>
+                        </div>
+                        
+                        <div style="background: rgba(16, 185, 129, 0.05); padding: 25px; border-radius: var(--border-radius); margin-bottom: 20px; border-left: 4px solid var(--data-green);">
+                            <h4 style="color: var(--data-green); margin-bottom: 10px;"><i class="fas fa-graduation-cap"></i> Sustainable Upskilling</h4>
+                            <p>Built L&D frameworks that continue delivering value beyond initial training engagements</p>
+                        </div>
+                        
+                        <div style="background: rgba(139, 92, 246, 0.05); padding: 25px; border-radius: var(--border-radius); border-left: 4px solid var(--cae-purple);">
+                            <h4 style="color: var(--cae-purple); margin-bottom: 10px;"><i class="fas fa-cube"></i> Engineering Excellence</h4>
+                            <p>Applied computational methods to improve design processes and simulation accuracy</p>
+                        </div>
                     </div>
-                    <div class="tech-description">Scalable data infrastructure and cloud-native solutions</div>
-                </div>
-                
-                <div class="tech-category">
-                    <h3><i class="fas fa-chart-bar"></i> Visualization & Analytics</h3>
-                    <div class="tech-items">
-                        <div class="tech-item"><i class="fas fa-chart-pie"></i> Power BI</div>
-                        <div class="tech-item"><i class="fas fa-chart-area"></i> Tableau</div>
-                        <div class="tech-item"><i class="fab fa-google"></i> Looker</div>
-                        <div class="tech-item"><i class="fas fa-chart-line"></i> Plotly Dash</div>
-                        <div class="tech-item"><i class="fas fa-chart-bar"></i> Matplotlib</div>
-                        <div class="tech-item"><i class="fas fa-seedling"></i> Seaborn</div>
-                        <div class="tech-item"><i class="fas fa-chart-line"></i> SPSS</div>
-                    </div>
-                    <div class="tech-description">Business intelligence, dashboards, and statistical analysis</div>
-                </div>
-                
-                <div class="tech-category">
-                    <h3><i class="fas fa-rocket"></i> Deployment & DevOps</h3>
-                    <div class="tech-items">
-                        <div class="tech-item"><i class="fab fa-docker"></i> Docker</div>
-                        <div class="tech-item"><i class="fas fa-flask"></i> Flask</div>
-                        <div class="tech-item"><i class="fas fa-stream"></i> Streamlit</div>
-                        <div class="tech-item"><i class="fab fa-git-alt"></i> Git</div>
-                        <div class="tech-item"><i class="fas fa-bolt"></i> GitHub Actions</div>
-                    </div>
-                    <div class="tech-description">CI/CD, containerization, and MLOps practices</div>
                 </div>
             </div>
         </div>
@@ -1109,7 +1004,7 @@
         <div class="container">
             <div class="section-header">
                 <h2>Get In Touch</h2>
-                <p>Let's discuss how data and AI can transform your organization. Reach out for consulting, speaking engagements, or collaboration opportunities.</p>
+                <p>Let's discuss AI mentorship, L&D strategy, or engineering consulting opportunities</p>
             </div>
             
             <div class="contact-content">
@@ -1121,6 +1016,7 @@
                         <div class="contact-text">
                             <h3>Email</h3>
                             <a href="mailto:chaudhari.chandan22@gmail.com">chaudhari.chandan22@gmail.com</a>
+                            <p style="font-size: 0.9rem; color: var(--gray); margin-top: 5px;">For mentorship inquiries, workshops, or consulting</p>
                         </div>
                     </div>
                     
@@ -1130,7 +1026,8 @@
                         </div>
                         <div class="contact-text">
                             <h3>LinkedIn</h3>
-                            <a href="https://www.linkedin.com/in/chandan-chaudhari-7460215a/" target="_blank">linkedin.com/in/chandan-chaudhari-7460215a</a>
+                            <a href="https://www.linkedin.com/in/chandan-chaudhari-7460215a/" target="_blank">Connect for Professional Network</a>
+                            <p style="font-size: 0.9rem; color: var(--gray); margin-top: 5px;">Industry insights and professional updates</p>
                         </div>
                     </div>
                     
@@ -1140,41 +1037,44 @@
                         </div>
                         <div class="contact-text">
                             <h3>GitHub</h3>
-                            <a href="https://github.com/chandanc5525" target="_blank">github.com/chandanc5525</a>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div class="contact-text">
-                            <h3>Availability</h3>
-                            <p>Available for consulting projects and speaking engagements</p>
+                            <a href="https://github.com/chandanc5525" target="_blank">Explore Technical Projects</a>
+                            <p style="font-size: 0.9rem; color: var(--gray); margin-top: 5px;">Code samples and technical demonstrations</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="contact-form">
-                    <form id="contactForm" action="https://formspree.io/f/your-form-id" method="POST">
+                    <h3 style="margin-bottom: 30px;">Send Me a Message</h3>
+                    <form id="contactForm" action="https://formspree.io/f/moqgvwvo" method="POST">
+                        <!-- Using a test Formspree endpoint - replace with yours -->
+                        <input type="hidden" name="_subject" value="New Contact from Portfolio">
+                        <input type="hidden" name="_replyto" value="chaudhari.chandan22@gmail.com">
+                        
                         <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" name="name" class="form-control" placeholder="Your Name" required>
+                            <label for="name">Your Name *</label>
+                            <input type="text" id="name" name="name" class="form-control" placeholder="Enter your full name" required>
                         </div>
                         
                         <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" class="form-control" placeholder="Your Email" required>
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email address" required>
                         </div>
                         
                         <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" class="form-control" placeholder="What would you like to discuss?" required>
+                            <label for="interest">Area of Interest *</label>
+                            <select id="interest" name="interest" class="form-control" required>
+                                <option value="">Select an option</option>
+                                <option value="ai-mentorship">Data Science & AI Mentorship</option>
+                                <option value="ld-strategy">L&D Program Development</option>
+                                <option value="cae-consulting">CAE & Engineering Consulting</option>
+                                <option value="workshop">Training Workshop Inquiry</option>
+                                <option value="other">Other Collaboration</option>
+                            </select>
                         </div>
                         
                         <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" class="form-control" placeholder="Your message..." required></textarea>
+                            <label for="message">Your Message *</label>
+                            <textarea id="message" name="message" class="form-control" placeholder="Tell me about your needs or project..." required></textarea>
                         </div>
                         
                         <button type="submit" class="form-submit">
@@ -1197,98 +1097,4 @@
                 
                 <div class="social-links">
                     <a href="mailto:chaudhari.chandan22@gmail.com" title="Email">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/chandan-chaudhari-7460215a/" target="_blank" title="LinkedIn">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="https://github.com/chandanc5525" target="_blank" title="GitHub">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="#contact" title="Contact">
-                        <i class="fas fa-phone"></i>
-                    </a>
-                </div>
-            </div>
-            
-            <div class="copyright">
-                &copy; 2024 Chandan Chaudhari | Data & AI Strategy Consultant. All rights reserved.<br>
-                Transforming enterprises through data-driven intelligence and AI innovation.
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navLinks = document.getElementById('navLinks');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
-                ? '<i class="fas fa-times"></i>' 
-                : '<i class="fas fa-bars"></i>';
-        });
-        
-        // Close mobile menu when clicking a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-            });
-        });
-        
-        // Form submission handling
-        const contactForm = document.getElementById('contactForm');
-        if (contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Get form data
-                const formData = new FormData(this);
-                const data = Object.fromEntries(formData);
-                
-                // In a real implementation, you would send this to a server
-                // For now, we'll just show a success message
-                alert('Thank you for your message! I will get back to you soon.');
-                this.reset();
-            });
-        }
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    // Close mobile menu if open
-                    navLinks.classList.remove('active');
-                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                    
-                    // Scroll to target
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-        
-        // Header scroll effect
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.padding = '15px 0';
-                header.style.boxShadow = 'var(--shadow-dark)';
-            } else {
-                header.style.padding = '20px 0';
-                header.style.boxShadow = 'var(--shadow)';
-            }
-        });
-    </script>
-</body>
-</html>
+                        <i class="fas
