@@ -3,24 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Strategic Data & AI Leader | Enterprise Transformation</title>
+    <title>Alex Morgan | Strategic Data & AI Leader</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Code+Pro:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --secondary: #7c3aed;
-            --dark: #1e293b;
-            --dark-light: #334155;
-            --light: #f8fafc;
-            --gray: #94a3b8;
-            --success: #10b981;
-            --tech-blue: #3b82f6;
-            --tech-purple: #8b5cf6;
-            --tech-green: #10b981;
-            --tech-red: #ef4444;
-            --tech-yellow: #f59e0b;
+            /* Professional Theme Colors */
+            --primary: #0066ff;
+            --primary-dark: #0052d4;
+            --secondary: #6c5ce7;
+            --accent: #00d2d3;
+            --dark: #1a1a2e;
+            --dark-card: #16213e;
+            --dark-light: #2d3748;
+            --light: #f8f9fa;
+            --gray: #a0aec0;
+            --success: #00b894;
+            --warning: #fdcb6e;
+            --danger: #e17055;
+            
+            /* Tech Gradient */
+            --gradient-primary: linear-gradient(135deg, #0066ff 0%, #6c5ce7 100%);
+            --gradient-secondary: linear-gradient(135deg, #00d2d3 0%, #0984e3 100%);
+            
+            /* Shadows */
+            --shadow-light: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --shadow-medium: 0 15px 35px rgba(0, 0, 0, 0.2);
+            --shadow-heavy: 0 20px 50px rgba(0, 0, 0, 0.3);
+            
+            /* Borders */
+            --border-light: 1px solid rgba(255, 255, 255, 0.1);
+            --border-medium: 1px solid rgba(255, 255, 255, 0.15);
         }
 
         * {
@@ -29,15 +42,19 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: var(--dark);
-            background-color: #0f172a;
-            background-image: 
-                radial-gradient(circle at 10% 20%, rgba(37, 99, 235, 0.05) 0%, transparent 20%),
-                radial-gradient(circle at 90% 80%, rgba(124, 58, 237, 0.05) 0%, transparent 20%);
+            line-height: 1.7;
             color: var(--light);
+            background-color: var(--dark);
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(0, 102, 255, 0.05) 0%, transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(108, 92, 231, 0.05) 0%, transparent 25%);
+            overflow-x: hidden;
         }
 
         .container {
@@ -46,30 +63,94 @@
             padding: 0 20px;
         }
 
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--gradient-primary);
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            color: var(--gray);
+        }
+
         /* Header & Navigation */
         header {
-            background-color: rgba(15, 23, 42, 0.9);
-            backdrop-filter: blur(10px);
             position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
             z-index: 1000;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            background-color: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: var(--border-light);
+            padding: 15px 0;
+            transition: all 0.3s ease;
+        }
+
+        .header-scrolled {
+            padding: 10px 0;
+            box-shadow: var(--shadow-medium);
         }
 
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
         }
 
         .logo {
             font-weight: 700;
             font-size: 1.5rem;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            background: var(--gradient-primary);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            width: 30px;
+            height: 30px;
+            background: var(--gradient-primary);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-icon i {
+            color: white;
+            font-size: 0.9rem;
         }
 
         .nav-links {
@@ -81,7 +162,7 @@
             color: var(--gray);
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.3s;
+            transition: all 0.3s;
             position: relative;
         }
 
@@ -96,7 +177,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            background: var(--gradient-primary);
             transition: width 0.3s;
         }
 
@@ -104,10 +185,18 @@
             width: 100%;
         }
 
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--light);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
         /* Hero Section */
         .hero {
-            padding: 160px 0 100px;
-            text-align: center;
+            padding: 180px 0 100px;
             position: relative;
             overflow: hidden;
         }
@@ -118,59 +207,144 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: 
-                radial-gradient(circle at 20% 50%, rgba(37, 99, 235, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(124, 58, 237, 0.1) 0%, transparent 50%);
             z-index: -1;
+            opacity: 0.5;
         }
 
-        .tagline {
-            font-size: 1.1rem;
-            color: var(--primary);
-            font-weight: 600;
-            margin-bottom: 15px;
-            letter-spacing: 1px;
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+            top: 10%;
+            right: 10%;
+            filter: blur(80px);
+            opacity: 0.2;
         }
 
-        h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 20px;
-            background: linear-gradient(90deg, #f8fafc, var(--primary));
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--secondary) 0%, transparent 70%);
+            bottom: 10%;
+            left: 10%;
+            filter: blur(60px);
+            opacity: 0.2;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-text h1 span {
+            background: var(--gradient-primary);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
         }
 
         .hero-subtitle {
-            font-size: 1.4rem;
+            font-size: 1.25rem;
             color: var(--gray);
-            max-width: 800px;
-            margin: 0 auto 40px;
-            line-height: 1.6;
+            margin-bottom: 30px;
         }
 
         .experience-badge {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            background: rgba(37, 99, 235, 0.1);
-            border: 1px solid rgba(37, 99, 235, 0.3);
-            padding: 10px 20px;
+            gap: 10px;
+            background: rgba(0, 102, 255, 0.1);
+            border: 1px solid rgba(0, 102, 255, 0.3);
+            padding: 12px 24px;
             border-radius: 50px;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             font-weight: 500;
+            backdrop-filter: blur(10px);
         }
 
         .experience-badge i {
             color: var(--primary);
         }
 
+        .hero-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .tech-sphere {
+            width: 350px;
+            height: 350px;
+            position: relative;
+        }
+
+        .sphere {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, rgba(0, 102, 255, 0.2), rgba(0, 102, 255, 0.05));
+            position: relative;
+            overflow: hidden;
+            box-shadow: 
+                inset 0 0 50px rgba(0, 102, 255, 0.2),
+                0 0 80px rgba(0, 102, 255, 0.1);
+            border: 1px solid rgba(0, 102, 255, 0.2);
+        }
+
+        .sphere::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: radial-gradient(circle at 70% 70%, rgba(108, 92, 231, 0.1), transparent);
+        }
+
+        .orbiting-tech {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 80%;
+            height: 80%;
+            transform: translate(-50%, -50%);
+            animation: rotate 20s linear infinite;
+        }
+
+        .tech-item {
+            position: absolute;
+            background: var(--dark-card);
+            border: var(--border-medium);
+            border-radius: 8px;
+            padding: 10px 15px;
+            font-family: 'Source Code Pro', monospace;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            box-shadow: var(--shadow-light);
+            transition: all 0.3s;
+        }
+
+        .tech-item:hover {
+            background: var(--primary-dark);
+            transform: scale(1.1);
+        }
+
+        @keyframes rotate {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
         .cta-buttons {
             display: flex;
             gap: 20px;
-            justify-content: center;
             margin-top: 40px;
         }
 
@@ -183,27 +357,32 @@
             align-items: center;
             gap: 10px;
             transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
         }
 
         .btn-primary {
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            background: var(--gradient-primary);
             color: white;
         }
 
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
+            box-shadow: 0 10px 25px rgba(0, 102, 255, 0.3);
         }
 
         .btn-secondary {
             background-color: rgba(255, 255, 255, 0.1);
             color: white;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: var(--border-light);
+            backdrop-filter: blur(10px);
         }
 
         .btn-secondary:hover {
             background-color: rgba(255, 255, 255, 0.15);
             transform: translateY(-3px);
+            border-color: var(--primary);
         }
 
         /* Sections */
@@ -211,86 +390,81 @@
             padding: 100px 0;
         }
 
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
+        .section-header {
+            text-align: center;
             margin-bottom: 60px;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 0;
-            width: 60px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            border-radius: 2px;
         }
 
         .section-subtitle {
             font-size: 1.2rem;
             color: var(--gray);
-            max-width: 800px;
-            margin-bottom: 60px;
+            max-width: 700px;
+            margin: 0 auto 40px;
         }
 
         /* Focus Areas */
         .focus-areas {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
-            margin-top: 50px;
+            margin-top: 40px;
         }
 
         .focus-card {
-            background: rgba(30, 41, 59, 0.7);
+            background: var(--dark-card);
             border-radius: 12px;
-            padding: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 40px 30px;
+            border: var(--border-light);
             transition: all 0.3s;
             position: relative;
             overflow: hidden;
         }
 
+        .focus-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-primary);
+        }
+
         .focus-card:hover {
             transform: translateY(-10px);
-            border-color: rgba(37, 99, 235, 0.3);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            border-color: var(--primary);
+            box-shadow: var(--shadow-medium);
         }
 
         .focus-icon {
             font-size: 2.5rem;
             margin-bottom: 20px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            background: var(--gradient-primary);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
         }
 
-        .focus-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-        }
-
-        .focus-card p {
-            color: var(--gray);
-        }
-
         /* Tech Stack */
+        .tech-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
         .tech-category {
-            margin-bottom: 60px;
+            background: var(--dark-card);
+            border-radius: 12px;
+            padding: 30px;
+            border: var(--border-light);
         }
 
         .tech-category h3 {
-            font-size: 1.5rem;
-            margin-bottom: 25px;
-            color: var(--light);
             display: flex;
             align-items: center;
             gap: 10px;
+            margin-bottom: 25px;
+            color: var(--light);
         }
 
         .tech-category h3 i {
@@ -300,31 +474,33 @@
         .tech-items {
             display: flex;
             flex-wrap: wrap;
-            gap: 15px;
+            gap: 12px;
         }
 
-        .tech-item {
-            background: rgba(30, 41, 59, 0.7);
+        .tech-item-static {
+            background: rgba(0, 102, 255, 0.1);
+            border: 1px solid rgba(0, 102, 255, 0.2);
             border-radius: 8px;
-            padding: 12px 20px;
+            padding: 10px 15px;
+            font-family: 'Source Code Pro', monospace;
+            font-size: 0.9rem;
+            transition: all 0.3s;
             display: flex;
             align-items: center;
-            gap: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.3s;
+            gap: 8px;
         }
 
-        .tech-item:hover {
-            transform: translateY(-5px);
+        .tech-item-static:hover {
+            background: rgba(0, 102, 255, 0.2);
             border-color: var(--primary);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transform: translateY(-3px);
         }
 
-        .tech-item i {
+        .tech-item-static i {
             color: var(--primary);
         }
 
-        /* Project & L&D Section */
+        /* Projects & L&D */
         .two-column {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -333,16 +509,11 @@
         }
 
         .column-card {
-            background: rgba(30, 41, 59, 0.7);
+            background: var(--dark-card);
             border-radius: 12px;
             padding: 40px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .column-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 25px;
-            color: var(--light);
+            border: var(--border-light);
+            height: 100%;
         }
 
         .skill-list {
@@ -350,8 +521,8 @@
         }
 
         .skill-list li {
-            margin-bottom: 20px;
-            padding-bottom: 20px;
+            margin-bottom: 25px;
+            padding-bottom: 25px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
@@ -362,7 +533,7 @@
         .skill-title {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             margin-bottom: 10px;
             font-weight: 600;
         }
@@ -371,12 +542,12 @@
             color: var(--primary);
         }
 
-        /* Philosophy Section */
+        /* Philosophy */
         .philosophy-container {
-            background: rgba(30, 41, 59, 0.7);
+            background: var(--dark-card);
             border-radius: 16px;
             padding: 60px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: var(--border-light);
             position: relative;
             overflow: hidden;
         }
@@ -388,11 +559,12 @@
             left: 0;
             width: 6px;
             height: 100%;
-            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+            background: var(--gradient-primary);
         }
 
         .philosophy-item {
             margin-bottom: 40px;
+            padding-left: 20px;
         }
 
         .philosophy-item:last-child {
@@ -400,19 +572,70 @@
         }
 
         .philosophy-item h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: var(--light);
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+
+        /* Contact */
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .contact-card {
+            background: var(--dark-card);
+            border-radius: 12px;
+            padding: 30px;
+            border: var(--border-light);
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: var(--shadow-light);
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(0, 102, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .contact-icon i {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .contact-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .contact-card a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-card a:hover {
+            color: var(--primary);
         }
 
         /* Footer */
         footer {
-            background-color: rgba(15, 23, 42, 0.95);
+            background-color: rgba(22, 33, 62, 0.95);
             padding: 60px 0 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-top: var(--border-light);
         }
 
         .footer-content {
@@ -428,13 +651,22 @@
         }
 
         .social-links a {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: var(--gray);
             font-size: 1.2rem;
-            transition: color 0.3s;
+            transition: all 0.3s;
         }
 
         .social-links a:hover {
-            color: var(--primary);
+            background: var(--gradient-primary);
+            color: white;
+            transform: translateY(-3px);
         }
 
         .copyright {
@@ -445,38 +677,71 @@
             border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        /* Responsive Design */
+        /* Responsive */
         @media (max-width: 992px) {
             h1 {
                 font-size: 2.8rem;
+            }
+            
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .tech-sphere {
+                width: 300px;
+                height: 300px;
+                margin: 0 auto;
             }
             
             .two-column {
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
+            
+            .cta-buttons {
+                justify-content: center;
+            }
         }
 
         @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
             .nav-links {
-                display: none;
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: var(--dark-card);
+                flex-direction: column;
+                padding: 30px;
+                box-shadow: var(--shadow-medium);
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s;
+                z-index: 999;
+                border-top: var(--border-light);
+            }
+            
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
             }
             
             h1 {
                 font-size: 2.2rem;
             }
             
-            .hero-subtitle {
-                font-size: 1.2rem;
-            }
-            
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .section-title {
+            h2 {
                 font-size: 2rem;
+            }
+            
+            .hero {
+                padding: 150px 0 80px;
             }
             
             .philosophy-container {
@@ -489,16 +754,44 @@
                 text-align: center;
             }
         }
+
+        @media (max-width: 480px) {
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .tech-sphere {
+                width: 250px;
+                height: 250px;
+            }
+        }
     </style>
 </head>
 <body>
     <!-- Header -->
-    <header>
+    <header id="header">
         <div class="container">
             <nav>
-                <div class="logo">Data & AI Leadership</div>
-                <div class="nav-links">
-                    <a href="#expertise">Strategic Focus</a>
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    Alex Morgan
+                </div>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <div class="nav-links" id="navLinks">
+                    <a href="#hero">Home</a>
+                    <a href="#expertise">Expertise</a>
                     <a href="#tech">Tech Stack</a>
                     <a href="#projects">Projects & L&D</a>
                     <a href="#philosophy">Philosophy</a>
@@ -509,27 +802,39 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="hero">
         <div class="hero-bg"></div>
         <div class="container">
-            <div class="tagline">STRATEGIC DATA & AI LEADER</div>
-            <h1>Enterprise Digital Transformation & AI Strategy</h1>
-            <p class="hero-subtitle">13-year proven track record of designing and executing enterprise-wide digital initiatives that translate complex business needs into scalable Data and AI strategies.</p>
-            
-            <div class="experience-badge">
-                <i class="fas fa-medal"></i>
-                <span>13+ Years Driving Operational Efficiency, Revenue Growth & Market Leadership</span>
-            </div>
-            
-            <div class="cta-buttons">
-                <a href="#contact" class="btn btn-primary">
-                    <i class="fas fa-paper-plane"></i>
-                    Connect for Transformation
-                </a>
-                <a href="https://github.com" target="_blank" class="btn btn-secondary">
-                    <i class="fab fa-github"></i>
-                    View GitHub Projects
-                </a>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="experience-badge">
+                        <i class="fas fa-medal"></i>
+                        <span>13+ Years Driving Digital Transformation</span>
+                    </div>
+                    
+                    <h1>Strategic <span>Data & AI</span> Leader</h1>
+                    <p class="hero-subtitle">Enterprise-wide digital initiatives that translate complex business needs into scalable Data and AI strategies, resulting in enhanced operational efficiency, revenue growth, and market leadership.</p>
+                    
+                    <div class="cta-buttons">
+                        <a href="#contact" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            Connect for Transformation
+                        </a>
+                        <a href="https://github.com/alexmorgan-ai" target="_blank" class="btn btn-secondary">
+                            <i class="fab fa-github"></i>
+                            View GitHub Projects
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="hero-visual">
+                    <div class="tech-sphere">
+                        <div class="sphere"></div>
+                        <div class="orbiting-tech">
+                            <!-- Tech items will be positioned by JavaScript -->
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -537,8 +842,10 @@
     <!-- Strategic Focus Section -->
     <section id="expertise">
         <div class="container">
-            <h2 class="section-title">Strategic Focus & Expertise</h2>
-            <p class="section-subtitle">Translating deep mechanical engineering first principles into sophisticated digital strategies that transform operations and create competitive advantage.</p>
+            <div class="section-header">
+                <h2>Strategic Focus & Expertise</h2>
+                <p class="section-subtitle">Translating deep mechanical engineering first principles into sophisticated digital strategies that transform operations and create competitive advantage.</p>
+            </div>
             
             <div class="focus-areas">
                 <div class="focus-card">
@@ -577,56 +884,58 @@
     </section>
 
     <!-- Tech Stack Section -->
-    <section id="tech" style="background-color: rgba(15, 23, 42, 0.7);">
+    <section id="tech" style="background-color: rgba(22, 33, 62, 0.5);">
         <div class="container">
-            <h2 class="section-title">Technical Stack & Weaponry</h2>
-            <p class="section-subtitle">Comprehensive expertise across the modern data and AI ecosystem, from development to deployment.</p>
-            
-            <div class="tech-category">
-                <h3><i class="fas fa-robot"></i> AI / Machine Learning & Programming</h3>
-                <div class="tech-items">
-                    <div class="tech-item"><i class="fab fa-python"></i> Python</div>
-                    <div class="tech-item"><i class="fas fa-chart-line"></i> R</div>
-                    <div class="tech-item"><i class="fas fa-brain"></i> TensorFlow</div>
-                    <div class="tech-item"><i class="fas fa-fire"></i> PyTorch</div>
-                    <div class="tech-item"><i class="fas fa-cogs"></i> Scikit-Learn</div>
-                    <div class="tech-item"><i class="fas fa-eye"></i> OpenCV</div>
-                    <div class="tech-item"><i class="fas fa-calculator"></i> MATLAB</div>
-                </div>
+            <div class="section-header">
+                <h2>Technical Stack & Weaponry</h2>
+                <p class="section-subtitle">Comprehensive expertise across the modern data and AI ecosystem, from development to deployment.</p>
             </div>
             
-            <div class="tech-category">
-                <h3><i class="fas fa-cloud"></i> Modern Data Platform & ETL</h3>
-                <div class="tech-items">
-                    <div class="tech-item"><i class="fas fa-snowflake"></i> Snowflake</div>
-                    <div class="tech-item"><i class="fas fa-database"></i> Databricks</div>
-                    <div class="tech-item"><i class="fas fa-bolt"></i> Apache Spark</div>
-                    <div class="tech-item"><i class="fas fa-ethernet"></i> ETL</div>
-                    <div class="tech-item"><i class="fab fa-aws"></i> AWS</div>
-                    <div class="tech-item"><i class="fas fa-cloud"></i> Azure</div>
+            <div class="tech-categories">
+                <div class="tech-category">
+                    <h3><i class="fas fa-robot"></i> AI / Machine Learning</h3>
+                    <div class="tech-items">
+                        <div class="tech-item-static"><i class="fab fa-python"></i> Python</div>
+                        <div class="tech-item-static"><i class="fas fa-chart-line"></i> R</div>
+                        <div class="tech-item-static"><i class="fas fa-brain"></i> TensorFlow</div>
+                        <div class="tech-item-static"><i class="fas fa-fire"></i> PyTorch</div>
+                        <div class="tech-item-static"><i class="fas fa-cogs"></i> Scikit-Learn</div>
+                        <div class="tech-item-static"><i class="fas fa-eye"></i> OpenCV</div>
+                        <div class="tech-item-static"><i class="fas fa-calculator"></i> MATLAB</div>
+                    </div>
                 </div>
-            </div>
-            
-            <div class="tech-category">
-                <h3><i class="fas fa-chart-bar"></i> Dashboarding & Data Visualization</h3>
-                <div class="tech-items">
-                    <div class="tech-item"><i class="fas fa-chart-pie"></i> Power BI</div>
-                    <div class="tech-item"><i class="fas fa-chart-area"></i> Tableau</div>
-                    <div class="tech-item"><i class="fab fa-google"></i> Google Looker</div>
-                    <div class="tech-item"><i class="fas fa-chart-line"></i> Plotly Dash</div>
-                    <div class="tech-item"><i class="fas fa-chart-bar"></i> Matplotlib</div>
-                    <div class="tech-item"><i class="fas fa-seedling"></i> Seaborn</div>
+                
+                <div class="tech-category">
+                    <h3><i class="fas fa-cloud"></i> Data Platform & ETL</h3>
+                    <div class="tech-items">
+                        <div class="tech-item-static"><i class="fas fa-snowflake"></i> Snowflake</div>
+                        <div class="tech-item-static"><i class="fas fa-database"></i> Databricks</div>
+                        <div class="tech-item-static"><i class="fas fa-bolt"></i> Apache Spark</div>
+                        <div class="tech-item-static"><i class="fab fa-aws"></i> AWS</div>
+                        <div class="tech-item-static"><i class="fas fa-cloud"></i> Azure</div>
+                    </div>
                 </div>
-            </div>
-            
-            <div class="tech-category">
-                <h3><i class="fas fa-rocket"></i> Deployment & DevOps</h3>
-                <div class="tech-items">
-                    <div class="tech-item"><i class="fab fa-docker"></i> Docker</div>
-                    <div class="tech-item"><i class="fas fa-flask"></i> Flask</div>
-                    <div class="tech-item"><i class="fas fa-stream"></i> Streamlit</div>
-                    <div class="tech-item"><i class="fab fa-git-alt"></i> Git</div>
-                    <div class="tech-item"><i class="fas fa-bolt"></i> GitHub Actions</div>
+                
+                <div class="tech-category">
+                    <h3><i class="fas fa-chart-bar"></i> Visualization & Analysis</h3>
+                    <div class="tech-items">
+                        <div class="tech-item-static"><i class="fas fa-chart-pie"></i> Power BI</div>
+                        <div class="tech-item-static"><i class="fas fa-chart-area"></i> Tableau</div>
+                        <div class="tech-item-static"><i class="fab fa-google"></i> Looker</div>
+                        <div class="tech-item-static"><i class="fas fa-chart-line"></i> Plotly</div>
+                        <div class="tech-item-static"><i class="fas fa-chart-bar"></i> Matplotlib</div>
+                    </div>
+                </div>
+                
+                <div class="tech-category">
+                    <h3><i class="fas fa-rocket"></i> Deployment & DevOps</h3>
+                    <div class="tech-items">
+                        <div class="tech-item-static"><i class="fab fa-docker"></i> Docker</div>
+                        <div class="tech-item-static"><i class="fas fa-flask"></i> Flask</div>
+                        <div class="tech-item-static"><i class="fas fa-stream"></i> Streamlit</div>
+                        <div class="tech-item-static"><i class="fab fa-git-alt"></i> Git</div>
+                        <div class="tech-item-static"><i class="fas fa-bolt"></i> GitHub Actions</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -635,8 +944,10 @@
     <!-- Projects & L&D Section -->
     <section id="projects">
         <div class="container">
-            <h2 class="section-title">Project & Learning Management</h2>
-            <p class="section-subtitle">Orchestrating the full project lifecycle for complex technical initiatives while cultivating high-performing teams through targeted L&D programs.</p>
+            <div class="section-header">
+                <h2>Project & Learning Management</h2>
+                <p class="section-subtitle">Orchestrating the full project lifecycle for complex technical initiatives while cultivating high-performing teams through targeted L&D programs.</p>
+            </div>
             
             <div class="two-column">
                 <div class="column-card">
@@ -685,8 +996,10 @@
     <!-- Philosophy Section -->
     <section id="philosophy">
         <div class="container">
-            <h2 class="section-title">Consulting Philosophy</h2>
-            <p class="section-subtitle">Building intelligent systems that drive measurable business outcomes while fostering data literacy and technical capability across organizations.</p>
+            <div class="section-header">
+                <h2>Consulting Philosophy</h2>
+                <p class="section-subtitle">Building intelligent systems that drive measurable business outcomes while fostering data literacy and technical capability across organizations.</p>
+            </div>
             
             <div class="philosophy-container">
                 <div class="philosophy-item">
@@ -707,66 +1020,84 @@
         </div>
     </section>
 
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Get In Touch</h2>
+                <p class="section-subtitle">Let's discuss how data and AI can transform your organization. Reach out for consulting, speaking engagements, or collaboration opportunities.</p>
+            </div>
+            
+            <div class="contact-info">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email</h3>
+                    <a href="mailto:alex.morgan@datastrategy.ai">alex.morgan@datastrategy.ai</a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <h3>GitHub</h3>
+                    <a href="https://github.com/alexmorgan-ai" target="_blank">github.com/alexmorgan-ai</a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <h3>Portfolio</h3>
+                    <a href="https://alexmorgan-ai.github.io" target="_blank">alexmorgan-ai.github.io</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
-    <footer id="contact">
+    <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="logo">Data & AI Leadership</div>
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    Alex Morgan
+                </div>
+                
                 <div class="social-links">
-                    <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="mailto:contact@example.com"><i class="fas fa-envelope"></i></a>
-                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://github.com/alexmorgan-ai" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/alex-morgan-ai" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:alex.morgan@datastrategy.ai"><i class="fas fa-envelope"></i></a>
+                    <a href="https://twitter.com/alexmorgan_ai" target="_blank"><i class="fab fa-twitter"></i></a>
                 </div>
             </div>
             
             <div class="copyright">
-                &copy; 2023 Strategic Data & AI Leader. All rights reserved. | Designed to showcase enterprise digital transformation expertise.
+                &copy; 2023 Alex Morgan | Strategic Data & AI Leader. All rights reserved.<br>
+                Transforming enterprises through data-driven intelligence and AI innovation.
             </div>
         </div>
     </footer>
 
     <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if(targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if(targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
         });
         
-        // Add animation to tech items on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if(entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
             });
-        }, observerOptions);
-        
-        // Observe tech items for animation
-        document.querySelectorAll('.tech-item, .focus-card').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-            observer.observe(el);
         });
-    </script>
-</body>
-</html>
