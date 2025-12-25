@@ -3,24 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chandan Chaudhari | Data & AI Strategy Consultant</title>
+    <title>Chandan Chaudhari | Data & AI Strategy Consultant | Business Transformation Mentor | L&D Professional</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Source+Code+Pro:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
+        /* CSS Variables */
         :root {
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --secondary: #7c3aed;
-            --accent: #10b981;
-            --gold: #f59e0b;
-            --silver: #94a3b8;
-            --bronze: #b45309;
+            --primary: #0066ff;
+            --primary-dark: #0052d4;
+            --secondary: #6c5ce7;
+            --accent: #00d2d3;
             --dark: #0f172a;
             --dark-light: #1e293b;
             --light: #f8fafc;
             --gray: #64748b;
-            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            --border-radius: 8px;
+            --light-gray: #e2e8f0;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --shadow-dark: 0 20px 40px rgba(0, 0, 0, 0.15);
+            --border-radius: 12px;
+            --transition: all 0.3s ease;
         }
 
         * {
@@ -34,284 +41,823 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Poppins', sans-serif;
             line-height: 1.6;
-            color: var(--light);
-            background-color: var(--dark);
+            color: var(--dark);
+            background-color: var(--light);
             background-image: 
-                radial-gradient(circle at 15% 50%, rgba(37, 99, 235, 0.1) 0%, transparent 25%),
-                radial-gradient(circle at 85% 30%, rgba(124, 58, 237, 0.1) 0%, transparent 25%);
+                radial-gradient(circle at 10% 20%, rgba(0, 102, 255, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(108, 92, 231, 0.05) 0%, transparent 20%);
         }
 
-        /* Achievement Badges in Hero */
-        .achievement-badges {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin: 25px 0;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
-        .badge {
+        section {
+            padding: 100px 0;
+        }
+
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: var(--border-radius);
+        }
+
+        .btn {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            padding: 10px 18px;
-            border-radius: 50px;
-            font-weight: 500;
-            font-size: 0.85rem;
-            transition: all 0.3s;
+            gap: 10px;
+            padding: 14px 32px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: var(--light);
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1rem;
         }
 
-        .badge-patent {
-            background: rgba(245, 158, 11, 0.15);
-            border: 1px solid rgba(245, 158, 11, 0.3);
-            color: var(--gold);
-        }
-
-        .badge-copyright {
-            background: rgba(37, 99, 235, 0.15);
-            border: 1px solid rgba(37, 99, 235, 0.3);
-            color: var(--primary);
-        }
-
-        .badge-research {
-            background: rgba(16, 185, 129, 0.15);
-            border: 1px solid rgba(16, 185, 129, 0.3);
-            color: var(--accent);
-        }
-
-        .badge:hover {
+        .btn:hover {
             transform: translateY(-3px);
             box-shadow: var(--shadow);
         }
 
-        /* Achievements Section */
-        .achievements-section {
-            background: rgba(15, 23, 42, 0.7);
-            padding: 80px 0;
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
         }
 
-        .achievement-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+        .btn-outline:hover {
+            background: var(--primary);
+            color: var(--light);
         }
 
-        .achievement-card {
-            background: rgba(30, 41, 59, 0.7);
-            padding: 35px;
-            border-radius: var(--border-radius);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s;
+        .section-header {
             text-align: center;
+            margin-bottom: 60px;
         }
 
-        .achievement-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary);
+        .section-header h2 {
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+        }
+
+        /* Header Styles */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.95);
             box-shadow: var(--shadow);
+            padding: 20px 0;
+            backdrop-filter: blur(10px);
         }
 
-        .achievement-icon {
-            width: 70px;
-            height: 70px;
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            color: var(--secondary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            position: relative;
+            color: var(--dark);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 180px 0 100px;
+            background: linear-gradient(135deg, rgba(0, 102, 255, 0.05) 0%, rgba(108, 92, 231, 0.05) 100%);
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-text .title-tag {
+            display: inline-block;
+            background: rgba(0, 102, 255, 0.1);
+            color: var(--primary);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .hero-text .subtitle {
+            font-size: 1.4rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .hero-text .role-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .role-tag {
+            background: var(--light);
+            border: 2px solid var(--light-gray);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .role-tag i {
+            color: var(--primary);
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .profile-img-container {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .profile-img {
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            box-shadow: var(--shadow-dark);
+            overflow: hidden;
+            border: 8px solid var(--light);
+            margin: 0 auto;
+        }
+
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .profile-img:hover img {
+            transform: scale(1.05);
+        }
+
+        .experience-badge {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            min-width: 180px;
+        }
+
+        .exp-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .exp-text {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* About Section */
+        .about {
+            background-color: var(--light);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .about-text .section-header {
+            text-align: left;
+        }
+
+        .about-text .section-header h2::after {
+            left: 0;
+            transform: none;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(0, 102, 255, 0.1), rgba(108, 92, 231, 0.1));
+            padding: 30px;
+            border-radius: var(--border-radius);
+            margin: 30px 0;
+            border-left: 4px solid var(--primary);
+        }
+
+        .highlight-box h3 {
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 102, 255, 0.1);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 20px;
+            flex-shrink: 0;
+        }
+
+        .feature-icon i {
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        .feature-text h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        /* Services Section */
+        .services {
+            background: linear-gradient(135deg, rgba(0, 102, 255, 0.02) 0%, rgba(108, 92, 231, 0.02) 100%);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--light);
+            border-radius: var(--border-radius);
+            padding: 40px 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-top: 4px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-dark);
+            border-top-color: var(--primary);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(0, 102, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+        }
+
+        .service-icon i {
             font-size: 1.8rem;
-        }
-
-        .icon-patent {
-            background: rgba(245, 158, 11, 0.2);
-            color: var(--gold);
-        }
-
-        .icon-copyright {
-            background: rgba(37, 99, 235, 0.2);
             color: var(--primary);
         }
 
-        .icon-research {
-            background: rgba(16, 185, 129, 0.2);
-            color: var(--accent);
+        .service-card h3 {
+            margin-bottom: 15px;
         }
 
-        .achievement-count {
-            font-size: 2.5rem;
+        /* Tech Stack Section */
+        .tech-stack {
+            background: linear-gradient(135deg, rgba(0, 102, 255, 0.02) 0%, rgba(108, 92, 231, 0.02) 100%);
+        }
+
+        .tech-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .tech-category {
+            background: var(--light);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--light-gray);
+        }
+
+        .tech-category h3 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 25px;
+            color: var(--dark);
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--light-gray);
+        }
+
+        .tech-category h3 i {
+            color: var(--primary);
+        }
+
+        .tech-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .tech-item {
+            background: rgba(0, 102, 255, 0.08);
+            border: 1px solid rgba(0, 102, 255, 0.15);
+            border-radius: 6px;
+            padding: 10px 18px;
+            font-family: 'Source Code Pro', monospace;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--dark);
+        }
+
+        .tech-item:hover {
+            background: rgba(0, 102, 255, 0.15);
+            border-color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 102, 255, 0.1);
+        }
+
+        .tech-item i {
+            color: var(--primary);
+            font-size: 0.9rem;
+        }
+
+        .tech-description {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-top: 10px;
+            font-style: italic;
+            padding-left: 5px;
+            border-left: 3px solid var(--light-gray);
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: var(--light);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 60px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .contact-card {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 30px;
+            background: var(--light);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid var(--light-gray);
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: var(--shadow-dark);
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(0, 102, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-icon i {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .contact-text h3 {
+            margin-bottom: 5px;
+            font-size: 1.3rem;
+        }
+
+        .contact-text a {
+            color: var(--primary);
+            font-weight: 500;
+            transition: var(--transition);
+            display: inline-block;
+            word-break: break-all;
+        }
+
+        .contact-text a:hover {
+            color: var(--primary-dark);
+            transform: translateX(5px);
+        }
+
+        .contact-form {
+            background: var(--light);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--light-gray);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--dark);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid var(--light-gray);
+            border-radius: var(--border-radius);
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+            background: var(--light);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.1);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .form-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: var(--light);
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
             font-weight: 700;
-            margin: 15px 0;
             background: linear-gradient(90deg, var(--primary), var(--secondary));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
         }
 
-        .achievement-list {
-            list-style: none;
-            margin-top: 20px;
-            text-align: left;
-        }
-
-        .achievement-list li {
-            margin-bottom: 12px;
-            padding-left: 25px;
-            position: relative;
-            font-size: 0.9rem;
-        }
-
-        .achievement-list li:before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-            font-weight: bold;
-        }
-
-        /* Enhanced Hero with Floating Badges */
-        .floating-badges {
-            position: absolute;
-            top: 50%;
-            right: -20px;
-            transform: translateY(-50%);
+        .social-links {
             display: flex;
-            flex-direction: column;
-            gap: 15px;
+            gap: 20px;
         }
 
-        .floating-badge {
-            width: 50px;
-            height: 50px;
+        .social-links a {
+            width: 45px;
+            height: 45px;
             border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.2rem;
-            animation: float 6s ease-in-out infinite;
+            transition: var(--transition);
         }
 
-        .floating-badge:nth-child(1) {
-            background: linear-gradient(45deg, var(--gold), #fbbf24);
-            animation-delay: 0s;
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-5px);
         }
 
-        .floating-badge:nth-child(2) {
-            background: linear-gradient(45deg, var(--primary), #60a5fa);
-            animation-delay: 2s;
-        }
-
-        .floating-badge:nth-child(3) {
-            background: linear-gradient(45deg, var(--accent), #34d399);
-            animation-delay: 4s;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-
-        /* Stats Badges */
-        .stats-container {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin: 40px 0;
-            flex-wrap: wrap;
-        }
-
-        .stat-badge {
+        .copyright {
             text-align: center;
-            padding: 25px;
-            min-width: 150px;
-            background: rgba(30, 41, 59, 0.7);
-            border-radius: var(--border-radius);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
         }
 
-        .stat-number {
-            font-size: 2.8rem;
-            font-weight: 700;
-            line-height: 1;
-            margin-bottom: 5px;
-        }
-
-        .stat-patents { color: var(--gold); }
-        .stat-copyrights { color: var(--primary); }
-        .stat-papers { color: var(--accent); }
-
-        /* Enhanced Hero Section */
-        .hero-text {
-            position: relative;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .floating-badges {
-                position: relative;
-                top: 0;
-                right: 0;
-                transform: none;
-                flex-direction: row;
-                justify-content: center;
-                margin-top: 30px;
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.8rem;
             }
             
-            .achievement-grid {
+            h2 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-content,
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+            
+            .hero-text {
+                text-align: center;
+            }
+            
+            .hero-btns {
+                justify-content: center;
+            }
+            
+            .role-tags {
+                justify-content: center;
+            }
+            
+            .profile-img {
+                width: 350px;
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: var(--light);
+                flex-direction: column;
+                padding: 30px;
+                box-shadow: var(--shadow);
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: var(--transition);
+                z-index: 999;
+            }
+            
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .hero {
+                padding: 150px 0 80px;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .profile-img {
+                width: 300px;
+                height: 300px;
+            }
+            
+            .experience-badge {
+                position: relative;
+                margin-top: 30px;
+                width: 100%;
+            }
+            
+            .about-features {
                 grid-template-columns: 1fr;
             }
             
-            .stats-container {
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            section {
+                padding: 80px 0;
+            }
+            
+            .hero-btns {
                 flex-direction: column;
                 align-items: center;
             }
             
-            .stat-badge {
+            .btn {
                 width: 100%;
-                max-width: 250px;
+                justify-content: center;
+            }
+            
+            .profile-img {
+                width: 250px;
+                height: 250px;
+            }
+            
+            .tech-category {
+                padding: 20px;
+            }
+            
+            .contact-form {
+                padding: 25px;
             }
         }
-
-        /* Existing styles from previous version remain... */
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        header { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; background-color: rgba(15, 23, 42, 0.95); backdrop-filter: blur(10px); padding: 20px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
-        .navbar { display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 1.5rem; font-weight: 700; background: linear-gradient(90deg, var(--primary), var(--secondary)); -webkit-background-clip: text; background-clip: text; color: transparent; }
-        .nav-links { display: flex; gap: 30px; }
-        .nav-links a { color: var(--gray); text-decoration: none; font-weight: 500; transition: color 0.3s; position: relative; }
-        .nav-links a:hover { color: var(--light); }
-        .nav-links a::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px; background: linear-gradient(90deg, var(--primary), var(--secondary)); transition: width 0.3s; }
-        .nav-links a:hover::after { width: 100%; }
-        .hero { padding: 180px 0 100px; }
-        .hero-content { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-        .hero-text h1 { font-size: 3.5rem; font-weight: 700; line-height: 1.2; margin-bottom: 20px; background: linear-gradient(90deg, var(--light), var(--primary)); -webkit-background-clip: text; background-clip: text; color: transparent; }
-        .title-tag { display: inline-block; background: rgba(37, 99, 235, 0.1); color: var(--primary); padding: 8px 20px; border-radius: 50px; font-weight: 600; margin-bottom: 20px; }
-        .subtitle { font-size: 1.4rem; color: var(--primary); font-weight: 600; margin-bottom: 20px; display: block; }
-        .hero-btns { display: flex; gap: 20px; margin-top: 40px; }
-        .btn { padding: 14px 32px; border-radius: var(--border-radius); font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s; }
-        .btn-primary { background: linear-gradient(90deg, var(--primary), var(--secondary)); color: white; }
-        .btn-primary:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
-        .profile-img { width: 400px; height: 400px; border-radius: 50%; overflow: hidden; border: 4px solid var(--primary); margin: 0 auto; position: relative; }
-        .profile-img img { width: 100%; height: 100%; object-fit: cover; }
-        section { padding: 100px 0; }
-        .section-title { font-size: 2.5rem; font-weight: 700; margin-bottom: 60px; position: relative; display: inline-block; }
-        .section-title::after { content: ''; position: absolute; bottom: -15px; left: 0; width: 60px; height: 4px; background: linear-gradient(90deg, var(--primary), var(--secondary)); }
-        .contact-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
-        .contact-card { background: rgba(30, 41, 59, 0.7); padding: 30px; border-radius: var(--border-radius); text-align: center; border: 1px solid rgba(255, 255, 255, 0.1); transition: transform 0.3s; }
-        .contact-card:hover { transform: translateY(-5px); border-color: var(--primary); }
-        .contact-icon { width: 60px; height: 60px; background: rgba(37, 99, 235, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; }
-        .contact-icon i { font-size: 1.5rem; color: var(--primary); }
-        .contact-card a { color: var(--light); text-decoration: none; transition: color 0.3s; display: block; margin-top: 10px; }
-        .contact-card a:hover { color: var(--primary); }
-        footer { background: rgba(15, 23, 42, 0.95); padding: 60px 0 30px; border-top: 1px solid rgba(255, 255, 255, 0.1); }
-        .footer-content { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; }
-        .social-links { display: flex; gap: 20px; }
-        .social-links a { width: 45px; height: 45px; border-radius: 50%; background: rgba(255, 255, 255, 0.1); display: flex; align-items: center; justify-content: center; color: var(--light); transition: all 0.3s; }
-        .social-links a:hover { background: var(--primary); transform: translateY(-3px); }
-        .copyright { text-align: center; color: var(--gray); font-size: 0.9rem; padding-top: 30px; border-top: 1px solid rgba(255, 255, 255, 0.1); }
-        @media (max-width: 992px) { .hero-content { grid-template-columns: 1fr; text-align: center; } .profile-img { width: 300px; height: 300px; } .hero-text h1 { font-size: 2.5rem; } }
-        @media (max-width: 768px) { .nav-links { display: none; } .hero-btns { flex-direction: column; align-items: center; } .btn { width: 100%; justify-content: center; } }
     </style>
 </head>
 <body>
@@ -319,83 +865,70 @@
     <header>
         <div class="container">
             <nav class="navbar">
-                <div class="logo">Chandan Chaudhari</div>
-                <div class="nav-links">
-                    <a href="#home">Home</a>
-                    <a href="#about">About</a>
-                    <a href="#achievements">Achievements</a>
-                    <a href="#tech">Tech Stack</a>
-                    <a href="#contact">Contact</a>
-                </div>
+                <a href="#" class="logo">
+                    <i class="fas fa-brain"></i>
+                    Chandan Chaudhari
+                </a>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#tech">Tech Stack</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section with Achievement Badges -->
+    <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
                     <span class="title-tag">Strategic Data & AI Leader</span>
                     <h1>Chandan Chaudhari</h1>
-                    <span class="subtitle">Data & AI Strategy Consultant | Business Transformation Mentor | L&D Professional</span>
                     
-                    <!-- Achievement Badges -->
-                    <div class="achievement-badges">
-                        <span class="badge badge-patent">
-                            <i class="fas fa-medal"></i>
-                            Patents Holder
-                        </span>
-                        <span class="badge badge-copyright">
-                            <i class="fas fa-copyright"></i>
-                            Copyrights Registered
-                        </span>
-                        <span class="badge badge-research">
-                            <i class="fas fa-graduation-cap"></i>
-                            International Research
-                        </span>
+                    <div class="subtitle">
+                        Data & AI Strategy Consultant | Business Transformation Mentor | L&D Professional
                     </div>
                     
-                    <p>13-year proven track record with intellectual property contributions including patents, copyrights, and international research papers in Data & AI domains.</p>
-                    
-                    <!-- Stats Badges -->
-                    <div class="stats-container">
-                        <div class="stat-badge">
-                            <div class="stat-number stat-patents">5+</div>
-                            <div>Patents</div>
-                        </div>
-                        <div class="stat-badge">
-                            <div class="stat-number stat-copyrights">8+</div>
-                            <div>Copyrights</div>
-                        </div>
-                        <div class="stat-badge">
-                            <div class="stat-number stat-papers">12+</div>
-                            <div>Research Papers</div>
-                        </div>
+                    <div class="role-tags">
+                        <span class="role-tag"><i class="fas fa-chess-king"></i> Strategy Consultant</span>
+                        <span class="role-tag"><i class="fas fa-sync-alt"></i> Transformation Mentor</span>
+                        <span class="role-tag"><i class="fas fa-graduation-cap"></i> L&D Professional</span>
                     </div>
+                    
+                    <p>13-year proven track record of designing and executing enterprise-wide digital initiatives that translate complex business needs into scalable Data and AI strategies, resulting in enhanced operational efficiency, revenue growth, and market leadership.</p>
                     
                     <div class="hero-btns">
-                        <a href="#achievements" class="btn btn-primary">
-                            <i class="fas fa-trophy"></i>
-                            View Achievements
-                        </a>
-                        <a href="#contact" class="btn" style="background: rgba(255,255,255,0.1); color: white;">
+                        <a href="#contact" class="btn">
                             <i class="fas fa-paper-plane"></i>
                             Get In Touch
                         </a>
+                        <a href="https://github.com/chandanc5525" target="_blank" class="btn btn-outline">
+                            <i class="fab fa-github"></i>
+                            View GitHub
+                        </a>
                     </div>
                 </div>
-                <div class="profile-img">
-                    <img src="https://avatars.githubusercontent.com/u/chandanc5525" alt="Chandan Chaudhari">
-                    <div class="floating-badges">
-                        <div class="floating-badge" title="Patent Holder">
-                            <i class="fas fa-medal"></i>
+                
+                <div class="hero-image">
+                    <div class="profile-img-container">
+                        <div class="profile-img">
+                            <!-- Your GitHub Profile Photo -->
+                            <img src="https://avatars.githubusercontent.com/u/chandanc5525" 
+                                 alt="Chandan Chaudhari - Data & AI Strategy Consultant"
+                                 onerror="this.onerror=null; this.src='https://avatars.githubusercontent.com/chandanc5525'">
                         </div>
-                        <div class="floating-badge" title="Copyright Owner">
-                            <i class="fas fa-copyright"></i>
-                        </div>
-                        <div class="floating-badge" title="Research Author">
-                            <i class="fas fa-graduation-cap"></i>
+                        
+                        <div class="experience-badge">
+                            <div class="exp-number">13+</div>
+                            <div class="exp-text">Years of Experience</div>
                         </div>
                     </div>
                 </div>
@@ -403,154 +936,252 @@
         </div>
     </section>
 
-    <!-- Achievements & Recognition Section -->
-    <section id="achievements" class="achievements-section">
+    <!-- About Section -->
+    <section class="about" id="about">
         <div class="container">
-            <h2 class="section-title">Achievements & Recognition</h2>
-            <p style="text-align: center; max-width: 800px; margin: 0 auto 50px; font-size: 1.1rem;">
-                Intellectual property contributions and academic recognition demonstrating innovation and thought leadership in Data & AI.
-            </p>
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="section-header">
+                        <h2>About Me</h2>
+                        <p>Strategic Data & AI Leader and Business Transformation Mentor with 13+ years of experience</p>
+                    </div>
+                    
+                    <p>I specialize in translating complex business needs into scalable Data and AI strategies. A cornerstone of my approach is building high-performing teams through bespoke L&D programs that ensure strategic alignment and long-term capability building.</p>
+                    
+                    <div class="highlight-box">
+                        <h3><i class="fas fa-bullseye"></i> Unique Value Proposition</h3>
+                        <p>Translating deep mechanical engineering first principles into sophisticated digital strategies that transform operations and create competitive advantage.</p>
+                    </div>
+                    
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Revenue Growth</h4>
+                                <p>Driving measurable business outcomes through strategic AI implementation</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Team Building</h4>
+                                <p>Building high-performing teams through targeted L&D and capability building</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Operational Efficiency</h4>
+                                <p>Enhancing processes through digital transformation and automation</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Innovation</h4>
+                                <p>Creating competitive advantage through sophisticated digital strategies</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Data Analytics Dashboard">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>My Services</h2>
+                <p>Comprehensive consulting and mentoring services to transform your organization through Data and AI</p>
+            </div>
             
-            <div class="achievement-grid">
-                <!-- Patents Card -->
-                <div class="achievement-card">
-                    <div class="achievement-icon icon-patent">
-                        <i class="fas fa-medal"></i>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chess-king"></i>
                     </div>
-                    <h3>Patents & Inventions</h3>
-                    <div class="achievement-count">5+ Patents</div>
-                    <p>Innovative solutions in Data Analytics, AI Algorithms, and Digital Transformation methodologies.</p>
-                    <ul class="achievement-list">
-                        <li>AI-Powered Predictive Maintenance System</li>
-                        <li>Real-time Data Processing Architecture</li>
-                        <li>Automated ML Model Deployment Framework</li>
-                        <li>Blockchain-based Data Security Protocol</li>
-                        <li>Edge Computing AI Optimization</li>
-                    </ul>
+                    <h3>Data & AI Strategy</h3>
+                    <p>End-to-end AI solution lifecycle management, from strategic conception to scalable deployment and CI/CD automation. Building intelligent systems that drive measurable business outcomes.</p>
                 </div>
                 
-                <!-- Copyrights Card -->
-                <div class="achievement-card">
-                    <div class="achievement-icon icon-copyright">
-                        <i class="fas fa-copyright"></i>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-sync-alt"></i>
                     </div>
-                    <h3>Copyrights & IP</h3>
-                    <div class="achievement-count">8+ Copyrights</div>
-                    <p>Protected intellectual property including software architectures, frameworks, and methodologies.</p>
-                    <ul class="achievement-list">
-                        <li>Enterprise AI Implementation Framework</li>
-                        <li>Data Governance Architecture</li>
-                        <li>MLOps Deployment Handbook</li>
-                        <li>Digital Twin Implementation Guide</li>
-                        <li>Business Transformation Methodology</li>
-                    </ul>
+                    <h3>Business Transformation</h3>
+                    <p>Driving enterprise-wide digital initiatives that enhance operational efficiency, revenue growth, and market leadership. Expert in mentoring cross-functional leaders.</p>
                 </div>
                 
-                <!-- Research Papers Card -->
-                <div class="achievement-card">
-                    <div class="achievement-icon icon-research">
+                <div class="service-card">
+                    <div class="service-icon">
                         <i class="fas fa-graduation-cap"></i>
                     </div>
-                    <h3>Research Publications</h3>
-                    <div class="achievement-count">12+ Papers</div>
-                    <p>International research publications in peer-reviewed journals and conferences.</p>
-                    <ul class="achievement-list">
-                        <li>IEEE Transactions on AI & ML</li>
-                        <li>International Data Science Journal</li>
-                        <li>ACM Computing Surveys</li>
-                        <li>Springer AI Review</li>
-                        <li>Elsevier Pattern Recognition</li>
-                    </ul>
+                    <h3>Organizational Upskilling</h3>
+                    <p>Building high-performing teams through bespoke L&D programs. Architecting comprehensive technical training curricula and upskilling programs for data science and engineering.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Existing About Section -->
-    <section id="about">
+    <!-- Tech Stack Section -->
+    <section class="tech-stack" id="tech">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px;">
-                <div>
-                    <p>Strategic Data & AI Leader with 13+ years experience and recognized intellectual property contributions through patents, copyrights, and international research.</p>
-                    <div style="background: rgba(30, 41, 59, 0.7); padding: 30px; border-radius: var(--border-radius); margin: 30px 0; border-left: 4px solid var(--primary);">
-                        <h3><i class="fas fa-trophy"></i> Recognition Highlights</h3>
-                        <p>Internationally recognized for innovative contributions to Data Science and AI methodologies, with multiple patents and research citations.</p>
-                    </div>
-                </div>
-                <div>
-                    <h3>Core Expertise</h3>
-                    <ul style="list-style: none; margin-top: 20px;">
-                        <li style="margin-bottom: 15px; padding-left: 25px; position: relative;">
-                            <i class="fas fa-medal" style="color: var(--gold); position: absolute; left: 0;"></i>
-                            <strong>Patent Development:</strong> AI/ML algorithm patents
-                        </li>
-                        <li style="margin-bottom: 15px; padding-left: 25px; position: relative;">
-                            <i class="fas fa-copyright" style="color: var(--primary); position: absolute; left: 0;"></i>
-                            <strong>IP Creation:</strong> Copyrighted methodologies & frameworks
-                        </li>
-                        <li style="margin-bottom: 15px; padding-left: 25px; position: relative;">
-                            <i class="fas fa-graduation-cap" style="color: var(--accent); position: absolute; left: 0;"></i>
-                            <strong>Research Leadership:</strong> International publications
-                        </li>
-                    </ul>
-                </div>
+            <div class="section-header">
+                <h2>Technical Architecture & Stack</h2>
+                <p>Comprehensive expertise across modern data, AI, and engineering ecosystems</p>
             </div>
-        </div>
-    </section>
-
-    <!-- Existing Tech Stack Section -->
-    <section id="tech" style="background: rgba(15, 23, 42, 0.7);">
-        <div class="container">
-            <h2 class="section-title">Technical Stack</h2>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
-                <div style="background: rgba(30, 41, 59, 0.7); padding: 30px; border-radius: var(--border-radius); border: 1px solid rgba(255, 255, 255, 0.1);">
+            
+            <div class="tech-categories">
+                <div class="tech-category">
                     <h3><i class="fas fa-robot"></i> AI & Machine Learning</h3>
-                    <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px;">
-                        <span style="background: rgba(37, 99, 235, 0.1); padding: 8px 16px; border-radius: 20px; font-size: 0.9rem;"><i class="fab fa-python"></i> Python</span>
-                        <span style="background: rgba(37, 99, 235, 0.1); padding: 8px 16px; border-radius: 20px; font-size: 0.9rem;"><i class="fas fa-brain"></i> TensorFlow</span>
-                        <span style="background: rgba(37, 99, 235, 0.1); padding: 8px 16px; border-radius: 20px; font-size: 0.9rem;"><i class="fas fa-fire"></i> PyTorch</span>
+                    <div class="tech-items">
+                        <div class="tech-item"><i class="fab fa-python"></i> Python</div>
+                        <div class="tech-item"><i class="fas fa-chart-line"></i> R</div>
+                        <div class="tech-item"><i class="fas fa-brain"></i> TensorFlow</div>
+                        <div class="tech-item"><i class="fas fa-fire"></i> PyTorch</div>
+                        <div class="tech-item"><i class="fas fa-cogs"></i> Scikit-Learn</div>
+                        <div class="tech-item"><i class="fas fa-eye"></i> OpenCV</div>
+                        <div class="tech-item"><i class="fas fa-calculator"></i> MATLAB</div>
                     </div>
+                    <div class="tech-description">End-to-end ML pipeline development, model training, and deployment</div>
                 </div>
-                <div style="background: rgba(30, 41, 59, 0.7); padding: 30px; border-radius: var(--border-radius); border: 1px solid rgba(255, 255, 255, 0.1);">
+                
+                <div class="tech-category">
                     <h3><i class="fas fa-cloud"></i> Cloud & Data Platforms</h3>
-                    <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px;">
-                        <span style="background: rgba(37, 99, 235, 0.1); padding: 8px 16px; border-radius: 20px; font-size: 0.9rem;"><i class="fas fa-snowflake"></i> Snowflake</span>
-                        <span style="background: rgba(37, 99, 235, 0.1); padding: 8px 16px; border-radius: 20px; font-size: 0.9rem;"><i class="fas fa-database"></i> Databricks</span>
+                    <div class="tech-items">
+                        <div class="tech-item"><i class="fas fa-snowflake"></i> Snowflake</div>
+                        <div class="tech-item"><i class="fas fa-database"></i> Databricks</div>
+                        <div class="tech-item"><i class="fas fa-bolt"></i> Apache Spark</div>
+                        <div class="tech-item"><i class="fas fa-ethernet"></i> ETL Pipelines</div>
+                        <div class="tech-item"><i class="fab fa-aws"></i> AWS</div>
+                        <div class="tech-item"><i class="fas fa-cloud"></i> Azure</div>
                     </div>
+                    <div class="tech-description">Scalable data infrastructure and cloud-native solutions</div>
+                </div>
+                
+                <div class="tech-category">
+                    <h3><i class="fas fa-chart-bar"></i> Visualization & Analytics</h3>
+                    <div class="tech-items">
+                        <div class="tech-item"><i class="fas fa-chart-pie"></i> Power BI</div>
+                        <div class="tech-item"><i class="fas fa-chart-area"></i> Tableau</div>
+                        <div class="tech-item"><i class="fab fa-google"></i> Looker</div>
+                        <div class="tech-item"><i class="fas fa-chart-line"></i> Plotly Dash</div>
+                        <div class="tech-item"><i class="fas fa-chart-bar"></i> Matplotlib</div>
+                        <div class="tech-item"><i class="fas fa-seedling"></i> Seaborn</div>
+                        <div class="tech-item"><i class="fas fa-chart-line"></i> SPSS</div>
+                    </div>
+                    <div class="tech-description">Business intelligence, dashboards, and statistical analysis</div>
+                </div>
+                
+                <div class="tech-category">
+                    <h3><i class="fas fa-rocket"></i> Deployment & DevOps</h3>
+                    <div class="tech-items">
+                        <div class="tech-item"><i class="fab fa-docker"></i> Docker</div>
+                        <div class="tech-item"><i class="fas fa-flask"></i> Flask</div>
+                        <div class="tech-item"><i class="fas fa-stream"></i> Streamlit</div>
+                        <div class="tech-item"><i class="fab fa-git-alt"></i> Git</div>
+                        <div class="tech-item"><i class="fas fa-bolt"></i> GitHub Actions</div>
+                    </div>
+                    <div class="tech-description">CI/CD, containerization, and MLOps practices</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" style="background: rgba(15, 23, 42, 0.9); padding: 100px 0;">
+    <section class="contact" id="contact">
         <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
+            <div class="section-header">
+                <h2>Get In Touch</h2>
+                <p>Let's discuss how data and AI can transform your organization. Reach out for consulting, speaking engagements, or collaboration opportunities.</p>
+            </div>
+            
             <div class="contact-content">
-                <div class="contact-card">
-                    <div class="contact-icon">
-                        <i class="fas fa-envelope"></i>
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Email</h3>
+                            <a href="mailto:chaudhari.chandan22@gmail.com">chaudhari.chandan22@gmail.com</a>
+                        </div>
                     </div>
-                    <h3>Email</h3>
-                    <p>For IP licensing, research collaboration, consulting</p>
-                    <a href="mailto:chaudhari.chandan22@gmail.com">chaudhari.chandan22@gmail.com</a>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>LinkedIn</h3>
+                            <a href="https://www.linkedin.com/in/chandan-chaudhari-7460215a/" target="_blank">linkedin.com/in/chandan-chaudhari-7460215a</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>GitHub</h3>
+                            <a href="https://github.com/chandanc5525" target="_blank">github.com/chandanc5525</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Availability</h3>
+                            <p>Available for consulting projects and speaking engagements</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="contact-card">
-                    <div class="contact-icon">
-                        <i class="fab fa-linkedin"></i>
-                    </div>
-                    <h3>LinkedIn</h3>
-                    <p>Professional network and experience</p>
-                    <a href="https://www.linkedin.com/in/chandan-chaudhari-7460215a/" target="_blank">View Profile</a>
-                </div>
-                <div class="contact-card">
-                    <div class="contact-icon">
-                        <i class="fab fa-github"></i>
-                    </div>
-                    <h3>GitHub</h3>
-                    <p>Technical projects and code repositories</p>
-                    <a href="https://github.com/chandanc5525" target="_blank">View Profile</a>
+                
+                <div class="contact-form">
+                    <form id="contactForm" action="https://formspree.io/f/your-form-id" method="POST">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" class="form-control" placeholder="What would you like to discuss?" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" class="form-control" placeholder="Your message..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="form-submit">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -560,7 +1191,10 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="logo">Chandan Chaudhari</div>
+                <div class="footer-logo">
+                    Chandan Chaudhari
+                </div>
+                
                 <div class="social-links">
                     <a href="mailto:chaudhari.chandan22@gmail.com" title="Email">
                         <i class="fas fa-envelope"></i>
@@ -571,29 +1205,89 @@
                     <a href="https://github.com/chandanc5525" target="_blank" title="GitHub">
                         <i class="fab fa-github"></i>
                     </a>
+                    <a href="#contact" title="Contact">
+                        <i class="fas fa-phone"></i>
+                    </a>
                 </div>
             </div>
+            
             <div class="copyright">
-                © 2024 Chandan Chaudhari. All rights reserved. | Patents • Copyrights • International Research
+                &copy; 2024 Chandan Chaudhari | Data & AI Strategy Consultant. All rights reserved.<br>
+                Transforming enterprises through data-driven intelligence and AI innovation.
             </div>
         </div>
     </footer>
 
     <script>
-        // Smooth scrolling for navigation links
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Form submission handling
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form data
+                const formData = new FormData(this);
+                const data = Object.fromEntries(formData);
+                
+                // In a real implementation, you would send this to a server
+                // For now, we'll just show a success message
+                alert('Thank you for your message! I will get back to you soon.');
+                this.reset();
+            });
+        }
+        
+        // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
+                
                 const targetId = this.getAttribute('href');
-                if(targetId === '#') return;
+                if (targetId === '#') return;
+                
                 const targetElement = document.querySelector(targetId);
-                if(targetElement) {
+                if (targetElement) {
+                    // Close mobile menu if open
+                    navLinks.classList.remove('active');
+                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    
+                    // Scroll to target
                     window.scrollTo({
                         top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
                     });
                 }
             });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.padding = '15px 0';
+                header.style.boxShadow = 'var(--shadow-dark)';
+            } else {
+                header.style.padding = '20px 0';
+                header.style.boxShadow = 'var(--shadow)';
+            }
         });
     </script>
 </body>
